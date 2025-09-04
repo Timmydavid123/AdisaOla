@@ -14,9 +14,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit, isProcessing }) =
     address: '',
     city: '',
     zip: '',
-    cardNumber: '',
-    expDate: '',
-    cvv: ''
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -92,43 +89,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit, isProcessing }) =
       
       <h3>Payment Details</h3>
       
-      <div className="form-group">
-        <label>Card Number</label>
-        <input
-          type="text"
-          name="cardNumber"
-          value={customerData.cardNumber}
-          onChange={handleChange}
-          placeholder="XXXX XXXX XXXX XXXX"
-          required
-        />
-      </div>
-      
-      <div className="form-row">
-        <div className="form-group">
-          <label>Expiration Date</label>
-          <input
-            type="text"
-            name="expDate"
-            value={customerData.expDate}
-            onChange={handleChange}
-            placeholder="MM/YY"
-            required
-          />
-        </div>
-        
-        <div className="form-group">
-          <label>CVV</label>
-          <input
-            type="text"
-            name="cvv"
-            value={customerData.cvv}
-            onChange={handleChange}
-            placeholder="XXX"
-            required
-          />
-        </div>
-      </div>
+     
       
       <button 
         type="submit" 

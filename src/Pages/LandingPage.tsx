@@ -1,19 +1,16 @@
 "use client"
 
-import { useRef, useState, useEffect, Suspense } from "react"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import * as THREE from "three"
+import { useRef, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { portfolioItems } from "../data/portfolio-data";
 
 export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkBackground, setIsDarkBackground] = useState(true)
-  const menuRef = useRef(null)
+    // Close menu when clicking outside
+const menuRef = useRef<HTMLDivElement>(null);
 
   const images = [
     "/image10.jpg",
@@ -32,20 +29,26 @@ export default function HomePage() {
   { name: "Contact", href: "/contact" },
 ]
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: { target: { closest: (arg0: string) => unknown } }) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && 
-          !event.target.closest('.menu-toggle')) {
-        setIsMenuOpen(false)
-      }
-    }
 
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement | null;
+
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(target) &&
+      !target?.closest('.menu-toggle')
+    ) {
+      setIsMenuOpen(false);
     }
-  }, [])
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,7 +90,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Custom CSS for thin typography and header style */}
-      <style jsx global>{`
+      <style>{`
         /* Thin typography throughout the site */
         body {
           font-weight: 300;

@@ -6,6 +6,8 @@ export interface EURepresentative {
 }
 
 export interface Product {
+  category: unknown;
+  name: unknown;
   id: number;
   title: string;
   price: number;
@@ -42,4 +44,4 @@ export interface OrderConfirmationData {
 }
 
 // Make sure you're using default export if that's what you're importing
-export default { Product, CartItem, CustomerData };
+export default { };

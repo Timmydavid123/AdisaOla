@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+
 import '../App.css';
 
 const Navbar: React.FC = () => {
-  const { getCartItemsCount } = useCart();
+
 
   return (
     <nav className="navbar">
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
             Shop
           </Link>
           <Link to="/checkout" className="nav-link cart-link">
-            Cart {getCartItemsCount() > 0 && <span className="cart-count">{getCartItemsCount()}</span>}
+    
           </Link>
         </div>
       </div>

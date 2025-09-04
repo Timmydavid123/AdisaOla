@@ -79,8 +79,8 @@ const location = useLocation();
     // 2. Redirect to the session URL returned by Stripe
     
     // For demo purposes, we'll simulate a Stripe redirect
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const stripeCheckoutUrl = `https://checkout.stripe.com/pay/demo_${Date.now()}?amount=${Math.round(orderTotal * 100)}`;
+     
+    // const stripeCheckoutUrl = `https://checkout.stripe.com/pay/demo_${Date.now()}?amount=${Math.round(orderTotal * 100)}`;
     
     // Simulate a brief delay before redirecting
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -99,8 +99,8 @@ const location = useLocation();
     // 2. Redirect to the PayPal approval URL
     
     // For demo purposes, we'll simulate a PayPal redirect
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const paypalCheckoutUrl = `https://www.paypal.com/checkoutnow?token=demo_${Date.now()}&amount=${orderTotal}`;
+     
+    // const paypalCheckoutUrl = `https://www.paypal.com/checkoutnow?token=demo_${Date.now()}&amount=${orderTotal}`;
     
     // Simulate a brief delay before redirecting
     await new Promise(resolve => setTimeout(resolve, 1000));
