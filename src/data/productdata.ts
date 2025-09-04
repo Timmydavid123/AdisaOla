@@ -22,9 +22,11 @@ export const products: Product[] = [
       "/shop/image1.JPG",
       "/shop/video1.MP4"
     ],
+    category: undefined,
+    name: undefined
   },
   {
-    id: 2,  
+    id: 2,
     title: "Shades of Innocence",
     artist: "Adisa Olahile",
     description: "I captured  this amazing image during the joy of Eid, Shades of Innocence reflects the quiet strength and playful spirit of childhood. The young girl, framed in her crisp attire and bold pink glasses, embodies the balance between tradition and individuality. Her gaze serious yet tender invites us to see beyond celebration into the heart of resilience, identity, and self-expression. This image speaks to anyone who remembers the wonder of being a child navigating culture, faith, and the small rebellions that make us who we are. It is both intimate and universal, a reminder that innocence wears many shades.",
@@ -44,6 +46,8 @@ export const products: Product[] = [
       "/shop/img5.JPG",
       "/shop/video2.MP4"
     ],
+    category: undefined,
+    name: undefined
   },
   {
     id: 3,
@@ -65,5 +69,7 @@ export const products: Product[] = [
       "/shop/imgs3.JPG",
       "/shop/video3.MP4"
     ],
+    category: undefined,
+    name: undefined
   },
 ];

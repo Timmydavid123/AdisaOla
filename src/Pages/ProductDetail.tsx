@@ -6,7 +6,6 @@ import { useCart } from "../context/CartContext";
 import Header from "./Header";
 import { useCurrency } from '../context/CurrencyContext';
 import "../App.css";
-import { frame } from "framer-motion";
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -86,7 +85,6 @@ const ProductDetail: React.FC = () => {
       quantity,
       frame: selectedFrame,
       framePrice,
-      frameDimensions: selectedFrameOption?.dimensions,
     });
 
     alert("Product added to cart!");

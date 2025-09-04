@@ -14,6 +14,7 @@ const menuRef = useRef<HTMLDivElement>(null);
 
   const images = [
     "/image10.jpg",
+    "/day.JPG",
     "/image8.jpg",
     "/image7.jpg",
     "/image6.jpg",
