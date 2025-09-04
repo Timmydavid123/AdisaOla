@@ -7,18 +7,6 @@ import { useCurrency } from '../context/CurrencyContext';
 import Header from './Header';
 import '../App.css';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  artist: string;
-  description: string;
-  dimensions: string;
-  medium: string;
-  image: string;
-  stock?: number;
-}
 
 const ProductList: React.FC = () => {
   const [sortOption, setSortOption] = useState<string>('default');
