@@ -48,17 +48,10 @@ const ImageProtection = () => {
       }
     };
     
-    // Add a warning when user tries to leave the page
-    const beforeUnloadHandler = (e: BeforeUnloadEvent) => {
-      const message = "Are you sure you want to leave? All your changes may not be saved.";
-      e.returnValue = message;
-      return message;
-    };
     
     // Add event listeners
     document.addEventListener('contextmenu', disableContextMenu);
     document.addEventListener('keydown', disableKeyShortcuts);
-    window.addEventListener('beforeunload', beforeUnloadHandler);
     
     // Add CSS to disable text selection and image dragging
     const style = document.createElement('style');
@@ -113,7 +106,6 @@ const ImageProtection = () => {
     return () => {
       document.removeEventListener('contextmenu', disableContextMenu);
       document.removeEventListener('keydown', disableKeyShortcuts);
-      window.removeEventListener('beforeunload', beforeUnloadHandler);
       document.head.removeChild(style);
       document.body.removeChild(overlay);
     };
