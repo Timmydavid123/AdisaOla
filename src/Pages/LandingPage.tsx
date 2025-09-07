@@ -24,7 +24,7 @@ const menuRef = useRef<HTMLDivElement>(null);
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
   { name: "Portfolio", href: "/portfolio" },
-    { name: "Exhibition", href: "/exhibition" },
+    { name: "Exhibition & Publications", href: "/exhibition" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
