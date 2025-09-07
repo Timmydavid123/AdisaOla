@@ -25,7 +25,7 @@ export interface ExhibitionItem {
 export const exhibitionItems: ExhibitionItem[] = [
 {
   id: "Lagos-London",
-  title: "Lagos Meet London",
+  title: "",
   category: "Documentry",
   description: "This series is a personal bridge between two places I call home: Lagos and London. Though separated by geography, I see a deep kinship between them in the spirit of their people, the rhythm of the streets, and the unspoken codes of fashion, posture, and pride. Lagos Meets London is about visual echoes how cultural essence persists across continents. Through portraits, style, and daily street life, I document how Nigerian identity isn't left behind when people migrate; instead, it reshapes and reclaims space in a new city. In this work, I see memory, movement, and cultural duality but most of all, I see belonging.",
   image: "/e1.PNG",
@@ -58,7 +58,7 @@ export const exhibitionItems: ExhibitionItem[] = [
 },
   {
     id: "natural-portraits",
-    title: "Natural Portraits",
+    title: "",
     category: "PORTRAIT",
     description: "Intimate portraits that capture authentic human emotion in natural settings.",
     image: "e2.PNG",
@@ -83,10 +83,10 @@ export const exhibitionItems: ExhibitionItem[] = [
   },
   {
     id: "abstract-nature",
-    title: "Abstract Nature",
-    category: "FINE ART",
+    title: "Baba Onilu With BellaNaija",
+    category: "",
     description: "Exploring the abstract patterns and textures found in the natural world.",
-    image: "/image4.jpg",
+    image: "/e3.jpg",
     images: {
       hero: "/image2.jpg",
       gallery: [
@@ -104,7 +104,7 @@ export const exhibitionItems: ExhibitionItem[] = [
     },
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
-    link:  "/portfolio/1"
+    link:  "https://www.bellanaija.com/2022/04/adisa-olashile-baba-onilu-nft/"
   },
   {
     id: "wedding-moments",
