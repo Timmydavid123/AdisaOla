@@ -74,7 +74,7 @@ export default function PortfolioDetailPage() {
                 </div>
                 {portfolio.client && (
                   <div>
-                    <h3 className="text-xs tracking-widest text-gray-400 mb-2">CLIENT</h3>
+                    <h3 className="text-xs tracking-widest text-gray-400 mb-2">LOCATION</h3>
                     <p className="text-[10px] text-gray-800">{portfolio.client}</p>
                   </div>
                 )}
@@ -93,40 +93,39 @@ export default function PortfolioDetailPage() {
           </div>
         </section>
 
-        {/* Featured Image - Full Centered */}
-        <section className="py-12">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="w-full aspect-video overflow-hidden">
-              <img
-                src={portfolio.images.featured || "/placeholder.svg"}
-                alt={`${portfolio.title} featured`}
-                className="w-full h-full object-cover shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
+        {/* Featured Image - Centered natural size */}
+<section className="py-12">
+  <div className="max-w-5xl mx-auto px-6 flex justify-center">
+    <img
+      src={portfolio.images.featured || "/placeholder.svg"}
+      alt={`${portfolio.title} featured`}
+      className="w-auto h-auto max-w-full object-contain shadow-lg"
+    />
+  </div>
+</section>
 
-        {/* First Two-Sided Images */}
-        <section className="py-12 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={portfolio.images.gallery[0] || "/placeholder.svg"}
-                  alt={`${portfolio.title} gallery 1`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={portfolio.images.gallery[1] || "/placeholder.svg"}
-                  alt={`${portfolio.title} gallery 2`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+{/* First Two-Sided Images */}
+<section className="py-12 px-6">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="flex justify-center items-center overflow-hidden">
+      <img
+        src={portfolio.images.gallery[0] || "/placeholder.svg"}
+        alt={`${portfolio.title} gallery 1`}
+        className="w-auto h-auto max-w-full object-contain"
+      />
+    </div>
+    <div className="flex justify-center items-center overflow-hidden">
+      <img
+        src={portfolio.images.gallery[1] || "/placeholder.svg"}
+        alt={`${portfolio.title} gallery 2`}
+        className="w-auto h-auto max-w-full object-contain"
+      />
+    </div>
+  </div>
+</section>
+
+
+
 
         {/* Text Section 2 */}
         <section className="py-16 px-6">
@@ -135,16 +134,16 @@ export default function PortfolioDetailPage() {
           </div>
         </section>
         
-        {/* Full Width Image Section */}
-        <section className="relative w-full overflow-hidden py-8">
-          <div className="max-w-4xl mx-auto">
-            <img
-              src={portfolio.images.gallery[2] || "/placeholder.svg"}
-              alt={`${portfolio.title} gallery 3`}
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          </div>
-        </section>
+        {/* Full Width Middle Image */}
+<section className="relative w-full overflow-hidden py-8">
+  <div className="max-w-4xl mx-auto flex justify-center">
+    <img
+      src={portfolio.images.gallery[2] || "/placeholder.svg"}
+      alt={`${portfolio.title} gallery 3`}
+      className="w-auto h-auto max-w-full object-contain rounded-lg shadow-lg"
+    />
+  </div>
+</section>
         
         {/* Second Two-Sided Images */}
         <section className="py-12 px-6">
@@ -204,19 +203,19 @@ export default function PortfolioDetailPage() {
         {/* Fourth Two-Sided Images (New) */}
         <section className="py-12 px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-square overflow-hidden">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex justify-center items-center overflow-hidden">
                 <img
                   src={portfolio.images.gallery[8] || "/placeholder.svg"}
                   alt={`${portfolio.title} gallery 9`}
-                  className="w-full h-full object-cover"
+                  className="w-auto h-auto max-w-full object-contain"
                 />
               </div>
-              <div className="aspect-square overflow-hidden">
+             <div className="flex justify-center items-center overflow-hidden">
                 <img
                   src={portfolio.images.gallery[9] || "/placeholder.svg"}
                   alt={`${portfolio.title} gallery 10`}
-                  className="w-full h-full object-cover"
+                  className="w-auto h-auto max-w-full object-contain"
                 />
               </div>
             </div>

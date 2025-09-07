@@ -45,12 +45,12 @@ export const portfolioItems: PortfolioItem[] = [
   },
   content: {
     intro: "This series explores the intersection of human ambition and architectural beauty in contemporary urban environments.",
-    details: "Each photograph in this collection was carefully composed to highlight the geometric patterns and dramatic lighting that define modern cityscapes. The project spans multiple cities and captures both the grandeur and intimacy of urban life.",
+    details: "",
     conclusion: "Through this work, I aim to showcase how architecture shapes our daily experiences and emotional connections to the spaces we inhabit.",
   },
-  date: "2024",
-  client: "Metropolitan Arts Council",
-  tags: ["architecture", "urban", "cityscape", "modern"],
+  date: "2025",
+  client: "Peckham",
+  tags: ["African Art", "Photography", "Documentry",],
 },
   {
     id: "natural-portraits",

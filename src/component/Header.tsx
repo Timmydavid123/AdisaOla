@@ -12,7 +12,7 @@ export default function Header({ isDarkBackground = true }) {
     { name: "Home", href: "/" },
     { name: "Shop", href: "/shop" },
     { name: "Portfolio", href: "/portfolio" },
-        { name: "Exhibition", href: "/exhibition" },
+        { name: "Exhibition & Publications", href: "/exhibition" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ]
@@ -35,11 +35,11 @@ export default function Header({ isDarkBackground = true }) {
   return (
     <>
       {/* Header */}
-   <header className="faulkner-header">
+    <header className="faulkner-header">
   <div className="header-content">
     <Link 
       to="/" 
-      className="header-name flex items-center"
+      className="header-name flex items-center gap-2"
       style={{ 
         color: isDarkBackground ? 'white' : 'black',
         textDecoration: 'none'
@@ -48,8 +48,9 @@ export default function Header({ isDarkBackground = true }) {
       <img 
         src={logo} 
         alt="Logo" 
-        className="w-10 h-10 object-contain" 
+        className="w-8 h-8 object-contain" 
       />
+      ADISA OLASHILE
     </Link>
   </div>
 </header>
