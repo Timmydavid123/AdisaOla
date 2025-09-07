@@ -8,6 +8,7 @@ import '../App.css';
 
 const Checkout: React.FC = () => {
   const { cartItems, getCartTotal, clearCart } = useCart();
+  const { formatPrice, convertToUSD, getStripeCurrency, getCurrencyMultiplier } = useCurrency();
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [selectedPayment, setSelectedPayment] = useState<string>('stripe');
   const [customerData, setCustomerData] = useState<CustomerData>({
@@ -18,17 +19,16 @@ const Checkout: React.FC = () => {
     zip: ''
   });
   const navigate = useNavigate();
-const location = useLocation();
-  const { formatPrice } = useCurrency();
+  const location = useLocation();
 
-   const handleGoBack = () => {
+  const handleGoBack = () => {
     if (location.key !== "default") {
-      navigate(-1); // go back to last page
+      navigate(-1);
     } else {
-      navigate('/shop'); // fallback if no history
+      navigate('/shop');
     }
   };
-  // Calculate shipping and total
+
   const shippingCost = cartItems.length > 0 ? 10 : 0;
   const orderTotal = getCartTotal() + shippingCost;
 
@@ -37,7 +37,7 @@ const location = useLocation();
     setCustomerData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmitOrder = async () => {
+  const redirectToStripe = async (): Promise<void> => {
     if (!customerData.name || !customerData.email || !customerData.address) {
       alert('Please fill in all required customer information');
       return;
@@ -46,85 +46,63 @@ const location = useLocation();
     setIsProcessing(true);
 
     try {
-      // Save order data to localStorage before redirecting
-      const orderData = {
-        customer: customerData,
-        items: cartItems,
-        total: orderTotal,
-        paymentMethod: selectedPayment,
-        timestamp: new Date().toISOString()
-      };
-      
-      localStorage.setItem('pendingOrder', JSON.stringify(orderData));
+      // Convert all prices to USD for Stripe consistency
+      const itemsForStripe = cartItems.map(item => ({
+        title: item.title,
+        price: convertToUSD(item.price), // Convert to USD
+        quantity: item.quantity,
+        image: item.image,
+        artist: item.artist
+      }));
 
-      if (selectedPayment === 'stripe') {
-        // Redirect to Stripe payment
-        await redirectToStripe();
-      } else if (selectedPayment === 'paypal') {
-        // Redirect to PayPal payment
-        await redirectToPayPal();
+      const response = await fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: itemsForStripe,
+          customerEmail: customerData.email,
+          successUrl: `${window.location.origin}/confirmation?session_id={CHECKOUT_SESSION_ID}`,
+          cancelUrl: `${window.location.origin}/checkout?canceled=true`,
+          currency: getStripeCurrency(), // Send the Stripe currency code
+          currencyMultiplier: getCurrencyMultiplier() // Send the multiplier
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to create Stripe session');
       }
 
+      const { url } = await response.json();
+      
+      if (url) {
+        window.location.href = url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
+      
     } catch (error) {
-      console.error('Payment initiation failed:', error);
-      alert('Payment initiation failed. Please try again.');
+      console.error('Stripe redirect failed:', error);
+      alert('Failed to initiate Stripe payment. Please try again.');
       setIsProcessing(false);
     }
   };
 
-  // Stripe Payment Redirection
-  const redirectToStripe = async (): Promise<void> => {
-    // In a real application, you would:
-    // 1. Send a request to your backend to create a Stripe Checkout Session
-    // 2. Redirect to the session URL returned by Stripe
-    
-    // For demo purposes, we'll simulate a Stripe redirect
-     
-    // const stripeCheckoutUrl = `https://checkout.stripe.com/pay/demo_${Date.now()}?amount=${Math.round(orderTotal * 100)}`;
-    
-    // Simulate a brief delay before redirecting
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // In a real app, you would use:
-    // window.location.href = stripeCheckoutUrl;
-    
-    // For this demo, we'll simulate the payment success and redirect to confirmation
-    simulatePaymentSuccess();
-  };
-
-  // PayPal Payment Redirection
   const redirectToPayPal = async (): Promise<void> => {
-    // In a real application, you would:
-    // 1. Send a request to your backend to create a PayPal order
-    // 2. Redirect to the PayPal approval URL
-    
-    // For demo purposes, we'll simulate a PayPal redirect
-     
-    // const paypalCheckoutUrl = `https://www.paypal.com/checkoutnow?token=demo_${Date.now()}&amount=${orderTotal}`;
-    
-    // Simulate a brief delay before redirecting
+    // PayPal implementation remains the same
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // In a real app, you would use:
-    // window.location.href = paypalCheckoutUrl;
-    
-    // For this demo, we'll simulate the payment success and redirect to confirmation
     simulatePaymentSuccess();
   };
 
-  // Simulate successful payment (for demo purposes only)
   const simulatePaymentSuccess = (): void => {
-    // Mark items as sold
     const soldItems = JSON.parse(localStorage.getItem('soldItems') || '{}');
     cartItems.forEach(item => {
       soldItems[item.id] = true;
     });
     localStorage.setItem('soldItems', JSON.stringify(soldItems));
-
-    // Clear cart and navigate to confirmation
     clearCart();
-    
-    // Remove pending order from localStorage
     localStorage.removeItem('pendingOrder');
     
     navigate('/confirmation', {
@@ -137,9 +115,16 @@ const location = useLocation();
     });
   };
 
+  const handleSubmitOrder = async () => {
+    if (selectedPayment === 'stripe') {
+      await redirectToStripe();
+    } else if (selectedPayment === 'paypal') {
+      await redirectToPayPal();
+    }
+  };
+
   if (cartItems.length === 0) {
     return (
-      
       <div className="checkout-page">
         <div className="container">
           <h2>Your cart is empty</h2>
@@ -153,9 +138,8 @@ const location = useLocation();
 
   return (
     <div className="checkout-page">
-       <Header />
+      <Header />
       <div className="container">
-        {/* Breadcrumb / Go Back */}
         <div className="breadcrumb">
           <button 
             onClick={handleGoBack} 
@@ -179,29 +163,28 @@ const location = useLocation();
                   <p>Quantity: {item.quantity}</p>
                 </div>
                 <div className="item-price">
-  {formatPrice(item.price * item.quantity)}
-</div>
+                  {formatPrice(item.price * item.quantity)}
+                </div>
               </div>
             ))}
             
             <div className="checkout-total">
               <div className="checkout-total-row">
-              <span>Subtotal:</span>
-              <span>{formatPrice(getCartTotal())}</span>
-            </div>
-            <div className="checkout-total-row">
-              <span>Shipping:</span>
-              <span>{formatPrice(shippingCost)}</span>
-            </div>
-            <div className="checkout-total-row grand-total">
-              <span>Total:</span>
-              <span>{formatPrice(orderTotal)}</span>
-            </div>
+                <span>Subtotal:</span>
+                <span>{formatPrice(getCartTotal())}</span>
+              </div>
+              <div className="checkout-total-row">
+                <span>Shipping:</span>
+                <span>{formatPrice(shippingCost)}</span>
+              </div>
+              <div className="checkout-total-row grand-total">
+                <span>Total:</span>
+                <span>{formatPrice(orderTotal)}</span>
+              </div>
             </div>
           </div>
           
           <div className="checkout-form-container">
-            {/* Customer Information */}
             <div className="customer-info-form">
               <h3>Customer Information</h3>
               
@@ -261,7 +244,6 @@ const location = useLocation();
               </div>
             </div>
 
-            {/* Payment Method Selection */}
             <div className="payment-methods">
               <h3>Select Payment Method</h3>
               <div className="payment-options">
@@ -301,7 +283,6 @@ const location = useLocation();
                 </div>
               </div>
               
-              {/* Payment Method Info */}
               <div className="payment-info">
                 {selectedPayment === 'stripe' && (
                   <div className="payment-method-details">
@@ -327,31 +308,29 @@ const location = useLocation();
               </div>
             </div>
 
-            {/* Payment Button */}
-           <button 
-  className={`payment-button ${selectedPayment}`}
-  onClick={handleSubmitOrder}
-  disabled={isProcessing}
->
-  {isProcessing ? (
-    <>
-      <span className="loading-spinner"></span>
-      <span>Redirecting to {selectedPayment === 'stripe' ? 'Stripe' : 'PayPal'}...</span>
-    </>
-  ) : (
-    <span>
-      {selectedPayment === 'stripe' ? 'Pay with Stripe' : 'Pay with PayPal'} - {formatPrice(orderTotal)}
-    </span>
-  )}
-</button>
+            <button 
+              className={`payment-button ${selectedPayment}`}
+              onClick={handleSubmitOrder}
+              disabled={isProcessing}
+            >
+              {isProcessing ? (
+                <>
+                  <span className="loading-spinner"></span>
+                  <span>Redirecting to {selectedPayment === 'stripe' ? 'Stripe' : 'PayPal'}...</span>
+                </>
+              ) : (
+                <span>
+                  {selectedPayment === 'stripe' ? 'Pay with Stripe' : 'Pay with PayPal'} - {formatPrice(orderTotal)}
+                </span>
+              )}
+            </button>
 
-            {/* Security Notice */}
             <div className="security-notice">
               <div className="lock-icon">🔒</div>
               <p>Your payment information is secure. We use {selectedPayment === 'stripe' ? 'Stripe' : 'PayPal'} for secure payment processing.</p>
             </div>
           </div>
-           <p className="copyright">© 2025 Adisa Olashile. All rights reserved.</p>
+          <p className="copyright">© 2025 Adisa Olashile. All rights reserved.</p>
         </div>
       </div>
     </div>

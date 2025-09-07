@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCurrency } from '../context/CurrencyContext';
+import logo from '../assets/a.png'
 
 const Header: React.FC = () => {
   const { currency, setCurrency } = useCurrency();
@@ -30,9 +31,17 @@ const Header: React.FC = () => {
     <header className="bg-white shadow-md py-4 px-6">
       <div className="flex items-center justify-between">
         {/* Brand Logo / Name */}
-        <Link to="/" className="text-xl font-light text-black">
-          Adisa Olashile
-        </Link>
+       <Link 
+  to="/" 
+  className="flex items-center gap-2 text-xl font-light text-black"
+>
+  <img 
+    src={logo} 
+    alt="Logo" 
+    className="w-8 h-8 object-contain"
+  />
+  Adisa Olashile
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">

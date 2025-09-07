@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
+import logo from '../assets/a.png'; 
 
 export default function Header({ isDarkBackground = true }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,20 +35,24 @@ export default function Header({ isDarkBackground = true }) {
   return (
     <>
       {/* Header */}
-      <header className="faulkner-header">
-        <div className="header-content">
-          <Link 
-            to="/" 
-            className="header-name"
-            style={{ 
-              color: isDarkBackground ? 'white' : 'black',
-              textDecoration: 'none'
-            }}
-          >
-            ADISA OLASHILE
-          </Link>
-        </div>
-      </header>
+   <header className="faulkner-header">
+  <div className="header-content">
+    <Link 
+      to="/" 
+      className="header-name flex items-center"
+      style={{ 
+        color: isDarkBackground ? 'white' : 'black',
+        textDecoration: 'none'
+      }}
+    >
+      <img 
+        src={logo} 
+        alt="Logo" 
+        className="w-10 h-10 object-contain" 
+      />
+    </Link>
+  </div>
+</header>
 
       {/* Menu Toggle Button */}
       <div 
