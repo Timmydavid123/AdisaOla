@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { exhibitionItems } from "../data/exhibit-data copy";
+import { publicationItems } from "../data/publication-data";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
@@ -20,7 +21,7 @@ export default function Exhibition() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {exhibitionItems.map((item) => {
+              {publicationItems.map((item) => {
                 const isExternal = item.link.startsWith("http");
 
                 const CardContent = (

@@ -53,20 +53,27 @@ export const portfolioItems: PortfolioItem[] = [
   tags: ["African Art", "Photography", "Documentry",],
 },
   {
-    id: "natural-portraits",
-    title: "Natural Portraits",
+    id: "Life-like-a-movie",
+    title: "Life Like a Movie",
     category: "PORTRAIT",
     description: "Intimate portraits that capture authentic human emotion in natural settings.",
-    image: "water.jpg",
+    image: "main.jpg",
     images: {
-      hero: "/image4.jpg",
+      hero: "/main.jpg",
       gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
+        "/l1.jpg",
+        "/l2.jpg",
+        "/l3.jpg",
+        "/l13.jpg",
+        "/l6.jpg",
+        "/l15.jpg",
+        "/l8.jpg",
+        "/l9.jpg",
+        "/l10.jpg",
+        "/l11.jpg",
+        "/l12.jpg",
       ],
-      featured: "/image4.jpg",
+      featured: "/l5.jpg",
     },
     content: {
       intro: "A collection of portraits that celebrate the authentic beauty and complexity of human expression.",
@@ -79,20 +86,27 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ["portrait", "natural light", "emotion", "authentic"],
   },
   {
-    id: "abstract-nature",
-    title: "Abstract Nature",
+    id: "joy",
+    title: "JOY",
     category: "FINE ART",
     description: "Exploring the abstract patterns and textures found in the natural world.",
-    image: "/image4.jpg",
+    image: "/j7.jpg",
     images: {
-      hero: "/image2.jpg",
+      hero: "/j7.jpg",
       gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
+        "/j2.jpg",
+        "/j4.jpg",
+        "/j3.jpg",
+        "/j1.jpg",
+        "/j5.jpg",
+        "/j6.jpg",
+        "/j7.jpg",
+        "/j8.jpg",
+        "/j9.jpg",
+        "/j10.jpg",
+        "/j2.jpg",
       ],
-      featured: "/image4.jpg?height=500&width=800",
+      featured: "/j11.jpg",
     },
     content: {
       intro:
@@ -105,135 +119,135 @@ export const portfolioItems: PortfolioItem[] = [
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
   },
-  {
-    id: "wedding-moments",
-    title: "Wedding Moments",
-    category: "WEDDING",
-    description: "Capturing the joy, emotion, and intimate moments of life's most precious celebrations.",
-    image: "/image2.jpg",
-    images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
-    },
-    content: {
-      intro: "Wedding photography that focuses on genuine emotion and the unique story of each couple's special day.",
-      details:
-        "My approach to wedding photography is documentary-style, capturing authentic moments as they unfold naturally. I believe the best wedding photos are those that transport you back to the feeling of the moment.",
-      conclusion:
-        "Each wedding is a unique celebration of love, and my goal is to preserve those irreplaceable memories for generations to come.",
-    },
-    date: "2024",
-    tags: ["wedding", "celebration", "emotion", "documentary"],
-  },
-  {
-    id: "street-photography",
-    title: "Street Stories",
-    category: "DOCUMENTARY",
-    description: "Documenting the spontaneous moments and human stories that unfold in urban spaces.",
-    image: "/image4.jpg",
-    images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
-    },
-    content: {
-      intro: "Street photography that captures the unscripted drama and beauty of everyday urban life.",
-      details:
-        "This ongoing project documents the diverse stories and characters that make up the fabric of city life. Each photograph is a glimpse into a moment that will never happen again in quite the same way.",
-      conclusion:
-        "Through street photography, we can celebrate the extraordinary moments that exist within ordinary days.",
-    },
-    date: "2023-2024",
-    tags: ["street", "documentary", "urban", "candid"],
-  },
-  {
-    id: "fashion-editorial",
-    title: "Fashion Editorial",
-    category: "FASHION",
-    description: "High-fashion editorial work that blends creativity with commercial appeal.",
-    image: "/image2.jpg",
-    images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
-    },
-    content: {
-      intro: "Editorial fashion photography that pushes creative boundaries while maintaining commercial viability.",
-      details:
-        "Working with top stylists, makeup artists, and models, this series explores the intersection of fashion, art, and storytelling. Each shoot is carefully conceptualized to create images that are both visually striking and emotionally resonant.",
-      conclusion:
-        "Fashion photography at its best tells a story and evokes emotion while showcasing the artistry of design and style.",
-    },
-    date: "2024",
-    client: "Vogue Italia",
-    tags: ["fashion", "editorial", "commercial", "creative"],
-  },
-  {
-    id: "landscape-serenity",
-    title: "Landscape Serenity",
-    category: "LANDSCAPE",
-    description: "Peaceful landscapes that showcase the tranquil beauty of natural environments.",
-    image: "/image3.jpg",
-    images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
-    },
-    content: {
-      intro: "A meditation on the peaceful and restorative power of natural landscapes.",
-      details:
-        "This collection was created during extended periods in nature, often requiring early morning hikes and patient waiting for the perfect light. Each image aims to convey the sense of peace and wonder that comes from being immersed in natural beauty.",
-      conclusion:
-        "In our increasingly digital world, these landscapes serve as reminders of the healing power of nature and our connection to the earth.",
-    },
-    date: "2023",
-    tags: ["landscape", "nature", "serenity", "peaceful"],
-  },
-  {
-    id: "corporate-portraits",
-    title: "Corporate Portraits",
-    category: "CORPORATE",
-    description: "Professional portraits that capture personality while maintaining corporate sophistication.",
-    image: "/image4.jpg",
-    images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
-    },
-    content: {
-      intro: "Corporate photography that balances professionalism with authentic personality.",
-      details:
-        "Working with executives and teams across various industries, I create portraits that serve business needs while revealing the human side of corporate culture. The goal is to create images that are both approachable and authoritative.",
-      conclusion:
-        "Great corporate photography helps build trust and connection by showing the people behind the business.",
-    },
-    date: "2024",
-    tags: ["corporate", "professional", "business", "headshots"],
-  },
+  // {
+  //   id: "wedding-moments",
+  //   title: "Wedding Moments",
+  //   category: "WEDDING",
+  //   description: "Capturing the joy, emotion, and intimate moments of life's most precious celebrations.",
+  //   image: "/image2.jpg",
+  //   images: {
+  //     hero: "/image2.jpg",
+  //     gallery: [
+  //       "/image2.jpg",
+  //       "/image4.jpg",
+  //       "/image3.jpg",
+  //       "/image2.jpg",
+  //     ],
+  //     featured: "/image4.jpg?height=500&width=800",
+  //   },
+  //   content: {
+  //     intro: "Wedding photography that focuses on genuine emotion and the unique story of each couple's special day.",
+  //     details:
+  //       "My approach to wedding photography is documentary-style, capturing authentic moments as they unfold naturally. I believe the best wedding photos are those that transport you back to the feeling of the moment.",
+  //     conclusion:
+  //       "Each wedding is a unique celebration of love, and my goal is to preserve those irreplaceable memories for generations to come.",
+  //   },
+  //   date: "2024",
+  //   tags: ["wedding", "celebration", "emotion", "documentary"],
+  // },
+  // {
+  //   id: "street-photography",
+  //   title: "Street Stories",
+  //   category: "DOCUMENTARY",
+  //   description: "Documenting the spontaneous moments and human stories that unfold in urban spaces.",
+  //   image: "/image4.jpg",
+  //   images: {
+  //     hero: "/image2.jpg",
+  //     gallery: [
+  //       "/image2.jpg",
+  //       "/image4.jpg",
+  //       "/image3.jpg",
+  //       "/image2.jpg",
+  //     ],
+  //     featured: "/image4.jpg?height=500&width=800",
+  //   },
+  //   content: {
+  //     intro: "Street photography that captures the unscripted drama and beauty of everyday urban life.",
+  //     details:
+  //       "This ongoing project documents the diverse stories and characters that make up the fabric of city life. Each photograph is a glimpse into a moment that will never happen again in quite the same way.",
+  //     conclusion:
+  //       "Through street photography, we can celebrate the extraordinary moments that exist within ordinary days.",
+  //   },
+  //   date: "2023-2024",
+  //   tags: ["street", "documentary", "urban", "candid"],
+  // },
+  // {
+  //   id: "fashion-editorial",
+  //   title: "Fashion Editorial",
+  //   category: "FASHION",
+  //   description: "High-fashion editorial work that blends creativity with commercial appeal.",
+  //   image: "/image2.jpg",
+  //   images: {
+  //     hero: "/image2.jpg",
+  //     gallery: [
+  //       "/image2.jpg",
+  //       "/image4.jpg",
+  //       "/image3.jpg",
+  //       "/image2.jpg",
+  //     ],
+  //     featured: "/image4.jpg?height=500&width=800",
+  //   },
+  //   content: {
+  //     intro: "Editorial fashion photography that pushes creative boundaries while maintaining commercial viability.",
+  //     details:
+  //       "Working with top stylists, makeup artists, and models, this series explores the intersection of fashion, art, and storytelling. Each shoot is carefully conceptualized to create images that are both visually striking and emotionally resonant.",
+  //     conclusion:
+  //       "Fashion photography at its best tells a story and evokes emotion while showcasing the artistry of design and style.",
+  //   },
+  //   date: "2024",
+  //   client: "Vogue Italia",
+  //   tags: ["fashion", "editorial", "commercial", "creative"],
+  // },
+  // {
+  //   id: "landscape-serenity",
+  //   title: "Landscape Serenity",
+  //   category: "LANDSCAPE",
+  //   description: "Peaceful landscapes that showcase the tranquil beauty of natural environments.",
+  //   image: "/image3.jpg",
+  //   images: {
+  //     hero: "/image2.jpg",
+  //     gallery: [
+  //       "/image2.jpg",
+  //       "/image4.jpg",
+  //       "/image3.jpg",
+  //       "/image2.jpg",
+  //     ],
+  //     featured: "/image4.jpg?height=500&width=800",
+  //   },
+  //   content: {
+  //     intro: "A meditation on the peaceful and restorative power of natural landscapes.",
+  //     details:
+  //       "This collection was created during extended periods in nature, often requiring early morning hikes and patient waiting for the perfect light. Each image aims to convey the sense of peace and wonder that comes from being immersed in natural beauty.",
+  //     conclusion:
+  //       "In our increasingly digital world, these landscapes serve as reminders of the healing power of nature and our connection to the earth.",
+  //   },
+  //   date: "2023",
+  //   tags: ["landscape", "nature", "serenity", "peaceful"],
+  // },
+  // {
+  //   id: "corporate-portraits",
+  //   title: "Corporate Portraits",
+  //   category: "CORPORATE",
+  //   description: "Professional portraits that capture personality while maintaining corporate sophistication.",
+  //   image: "/image4.jpg",
+  //   images: {
+  //     hero: "/image2.jpg",
+  //     gallery: [
+  //       "/image2.jpg",
+  //       "/image4.jpg",
+  //       "/image3.jpg",
+  //       "/image2.jpg",
+  //     ],
+  //     featured: "/image4.jpg?height=500&width=800",
+  //   },
+  //   content: {
+  //     intro: "Corporate photography that balances professionalism with authentic personality.",
+  //     details:
+  //       "Working with executives and teams across various industries, I create portraits that serve business needs while revealing the human side of corporate culture. The goal is to create images that are both approachable and authoritative.",
+  //     conclusion:
+  //       "Great corporate photography helps build trust and connection by showing the people behind the business.",
+  //   },
+  //   date: "2024",
+  //   tags: ["corporate", "professional", "business", "headshots"],
+  // },
 ]
