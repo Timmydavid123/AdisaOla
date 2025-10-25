@@ -14,10 +14,7 @@ export default function Header({ isDarkBackground = true }) {
   { name: "Portfolio", href: "/portfolio" },
   { name: "Exhibition & Publications", href: "/exhibition" },
   { 
-    name: "NFTS", 
-    href: "https://foundation.app/@adisaolashile", 
-    external: true // optional flag if you want to handle it differently
-  },
+    name: "NFTS", href: "/nfts"},
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];

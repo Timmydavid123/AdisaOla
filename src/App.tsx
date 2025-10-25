@@ -17,6 +17,7 @@ const ConfirmationPage = lazy(() => import('./Pages/Confirmation'));
 const NotFoundPage = lazy(() => import('./component/NotFoundPage'));
 const ProductDetailPage = lazy(() => import('./Pages/ProductDetail'));
 const Exhibition = lazy(() => import('./Pages/Exhibition'));
+const NFTS = lazy(() => import('./Pages/nfts'));
 
 // Image Protection Component
 const ImageProtection = () => {
@@ -136,6 +137,7 @@ function App() {
                   <Route path="/confirmation" element={<ConfirmationPage />} />
                   <Route path="/product/:id" element={<ProductDetailPage />} />
                   <Route path="/exhibition" element={<Exhibition />} />
+                  <Route path="/nfts" element={<NFTS />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
