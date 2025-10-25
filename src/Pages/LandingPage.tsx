@@ -25,7 +25,7 @@ const menuRef = useRef<HTMLDivElement>(null);
   { name: "Shop", href: "/shop" },
   { name: "Portfolio", href: "/portfolio" },
     { name: "Exhibition & Publications", href: "/exhibition" },
-    { name: "NFTS", href: "/https://foundation.app/@adisaolashile" },
+    { name: "NFTS", href: "https://foundation.app/@adisaolashile" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
