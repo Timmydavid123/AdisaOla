@@ -9,14 +9,18 @@ export default function Header({ isDarkBackground = true }) {
   const menuRef = useRef<HTMLDivElement>(null)
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Shop", href: "/shop" },
-    { name: "Portfolio", href: "/portfolio" },
-        { name: "Exhibition & Publications", href: "/exhibition" },
-        { name: "NFTS", href: "https://foundation.app/@adisaolashile" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ]
+  { name: "Home", href: "/" },
+  { name: "Shop", href: "/shop" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Exhibition & Publications", href: "/exhibition" },
+  { 
+    name: "NFTS", 
+    href: "https://foundation.app/@adisaolashile", 
+    external: true // optional flag if you want to handle it differently
+  },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
