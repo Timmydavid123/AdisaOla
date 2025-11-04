@@ -230,7 +230,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "Peckham-pimps",
     title: "Peckham pimps",
     category: "FINE ART",
-    description: "Exploring the abstract patterns and textures found in the natural world.",
+    description: "A striking documentary series capturing the flamboyant presence of a collective who command the streets of South London with theatrical flair and unapologetic style. Shot on location in Peckham, these images chronicle a group adorned in luxurious furs, wide-brimmed fedoras, and cascading gold jewellery, their aesthetic drawing from the iconography of 1970s Blaxploitation cinema filtered through a distinctly contemporary British lens. The photographs pulse with the raw energy of urban performance. Against the graffiti-covered walls and iconic black cabs of Peckham's streets, the subjects transform the everyday backdrop into a stage for self-expression. Their costumes, burgundy leather trenches with fur trim, leopard print coats, and layered chains bearing ornate medallions speak to a carefully curated identity that exists somewhere between homage, satire, and sincere celebration of excess.",
     image: "/p2.jpg",
     images: {
       hero: "/p4.jpg",
@@ -253,9 +253,9 @@ export const portfolioItems: PortfolioItem[] = [
       intro:
         "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
       details:
-        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+        "Each frame captures the swagger of their procession through the neighborhood, their synchronized poses and deliberate placement within the urban landscape suggesting both ownership and outsider status. The overcast London sky lends a cinematic quality to the scenes, the muted light emphasizing the richness of textures: the shine of patent leather, the depth of fur, the gleam of gold against skin.",
       conclusion:
-        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+        "These are portraits of confidence and community, of individuals who have chosen visibility in a society that often renders them invisible. The series interrogates notions of masculinity, Black British identity, and the reclamation of stereotypes through exaggeration and aesthetic prowess. There's humour here, but also defiance, a refusal to be confined by respectability politics or mainstream expectations. The London setting is crucial: the Underground roundel, the distinctive architecture, the multicultural signage all ground these images in a specific geography where immigrant communities have long carved out spaces of belonging. Peckham becomes both character and stage, its gritty authenticity providing the perfect counterpoint to the group's polished audacity. This is street photography elevated to cultural commentary, documenting a subculture that exists in plain sight yet remains largely unexamined. The series asks viewers to look beyond surface judgments and consider the artistry, the intention, and the community bonds that manifest through shared aesthetic choices and collective presence in public space.",
     },
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
