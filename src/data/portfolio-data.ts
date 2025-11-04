@@ -24,7 +24,7 @@ export const portfolioItems: PortfolioItem[] = [
   id: "Lagos-London",
   title: "Lagos Meet London",
   category: "Documentry",
-  description: "This series is a personal bridge between two places I call home: Lagos and London. Though separated by geography, I see a deep kinship between them in the spirit of their people, the rhythm of the streets, and the unspoken codes of fashion, posture, and pride. Lagos Meets London is about visual echoes how cultural essence persists across continents. Through portraits, style, and daily street life, I document how Nigerian identity isn't left behind when people migrate; instead, it reshapes and reclaims space in a new city. In this work, I see memory, movement, and cultural duality but most of all, I see belonging.",
+  description: "This series is a personal bridge between two places I call home: Lagos and London. Though separated by geography, I see a deep kinship between them in the spirit of their people, the rhythm of the streets, and the unspoken codes of fashion, posture, and pride. Lagos Meets London is about visual echoes how cultural essence persists across continents. Through portraits, style, and daily street life, I document how Nigerian identity isn't left behind when people migrate; instead, it reshapes and reclaims space in a new city. ",
   image: "/port1.jpg",
   images: {
     hero: "/port1.jpg",
@@ -46,7 +46,7 @@ export const portfolioItems: PortfolioItem[] = [
   content: {
     intro: "This series explores the intersection of human ambition and architectural beauty in contemporary urban environments.",
     details: "",
-    conclusion: "Through this work, I aim to showcase how architecture shapes our daily experiences and emotional connections to the spaces we inhabit.",
+    conclusion: "In this work, I see memory, movement, and cultural duality but most of all, I see belonging. Through this work, I aim to showcase how architecture shapes our daily experiences and emotional connections to the spaces we inhabit.",
   },
   date: "2025",
   client: "Peckham",
@@ -56,7 +56,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "Life-like-a-movie",
     title: "Life Like a Movie",
     category: "PORTRAIT",
-    description: "Intimate portraits that capture authentic human emotion in natural settings.",
+    description: "For the past few months, I've been wandering the streets with my camera, seeking out strangers and moments that feel lifted from cinema. This series explores the cinematic quality hidden within everyday life, the way an ordinary Tuesday afternoon can hold the tension of a thriller, or how a chance encounter on a cobblestone street might mirror a scene from a classic film.",
     image: "main.jpg",
     images: {
       hero: "/main.jpg",
@@ -78,9 +78,9 @@ export const portfolioItems: PortfolioItem[] = [
     content: {
       intro: "A collection of portraits that celebrate the authentic beauty and complexity of human expression.",
       details:
-        "Working exclusively with natural light, this series focuses on creating genuine connections between subject and viewer. Each session was approached as a collaborative exploration of personality and emotion.",
+        "Each photograph captures an unguarded moment: a businessman mid-stride, lost in thought; a heavily tattooed figure standing in stark profile against urban decay. These are not staged or directed. They're raw, spontaneous fragments of reality that happen to possess the composition, lighting, and emotional weight of scripted scenes. I'm drawn to the idea that we're all unknowing actors in our own narratives, moving through spaces that serve as natural sets, wearing our stories on our faces and bodies. The drama isn't manufactured, it's already there in the way light falls across a facade, in the posture of someone walking alone, in the juxtaposition of people who will never know they shared a frame.",
       conclusion:
-        "These portraits remind us that true beauty lies in authenticity and the courage to be vulnerable in front of the camera.",
+        "This work is about paying attention. It's about recognizing that the extraordinary doesn't require special circumstances; it exists in the gesture of a stranger, the architecture of a moment, the unspoken narrative between subject and setting. These frames reveal the beauty, complexity, and poetry that unfold around us constantly, if only we're present enough to notice. Because life, after all, is its own kind of movie, and we're all both the audience and the cast.",
     },
     date: "2024",
     tags: ["portrait", "natural light", "emotion", "authentic"],
@@ -123,7 +123,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "Alake",
     title: "ÀLÀKÉ",
     category: "FINE ART",
-    description: "Exploring the abstract patterns and textures found in the natural world.",
+    description: "Àlàké (one to be pampered and cared for) a Yoruba name that carries within it the weight of tenderness, value, and ancestral blessing. This series is a meditation on identity reclaimed, on the quiet power of a woman who knows her worth beyond the Western gaze.",
     image: "/al7.jpg",
     images: {
       hero: "/al7.jpg",
@@ -146,9 +146,9 @@ export const portfolioItems: PortfolioItem[] = [
       intro:
         "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
       details:
-        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+        "Photographed in the lush, shadowed corners of a garden in Ibadan Nigeria, she sits and stands with the ease of someone at home in her own skin. The leopard print that drapes her body is not mere fashion, it speaks to an older language, one where pattern and adornment carry meaning, where the wild is worn with intention. Her cornrows trace precise lines across her scalp, a hairstyle with roots that stretch back millennia, functional and beautiful in equal measure. The details tell their own stories: red coral beads wrapped around her ankle, a tradition worn by Yoruba women. Pearl earrings catching the diffused light. A necklace of turquoise beads interrupted by wooden elements and carved symbols perhaps a reference to waist beads, to protection, Her gaze is steady, contemplative, directed away from the camera in one frame, meeting it directly in another.",
       conclusion:
-        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+        "This is portraiture that refuses to perform. There is no smile for comfort, no pose for palatability. Instead, there is a presence grounded, self-possessed, unapologetic. The natural backdrop of verdant foliage and weathered wood creates a liminal space, neither fully here nor there. Àlàké exists in her fullness, holding space for complexity, for beauty that doesn't ask permission, for heritage that adapts but never disappears.",
     },
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
@@ -157,8 +157,8 @@ export const portfolioItems: PortfolioItem[] = [
      {
     id: "An Igbo mother in London",
     title: "An Igbo mother in London",
-    category: "FINE ART",
-    description: "Exploring the abstract patterns and textures found in the natural world.",
+    category: "African Art",
+    description: "Photographed moments after Sunday service on a quiet London street, this Igbo mother stands resplendent in full traditional attire, a powerful portrait of cultural preservation in the diaspora. Her gele, wrapped in rich crimson tones with gold embellishments, rises in sculptural folds that speak to both artistry and tradition. The elaborate headwrap frames her face with regal bearing, a crown of heritage worn with quiet confidence",
     image: "/q2.jpg",
     images: {
       hero: "/q2.jpg",
@@ -179,14 +179,14 @@ export const portfolioItems: PortfolioItem[] = [
     },
     content: {
       intro:
-        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+        "",
       details:
-        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+        "Behind her, the unmistakably British landscape unfolds: red brick Victorian buildings, a red double-decker bus at the stop, street signs, and the grey London pavement beneath her feet. The juxtaposition is striking yet harmonious and she doesn't stand apart from this cityscape; she belongs to it, even as she carries another home within her dress, her bearing, her Sunday ritual.",
       conclusion:
-        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+        "She is dressed in a complete aso ebi ensemble: a coral-red lace blouse with intricate embroidered patterns catches the diffused London light, its delicate needlework tracing florals across the fabric. The matching wrapper, tied at her waist in the traditional style, features complementary patterns that flow downward. A coordinating handbag rests at her side, its textured surface echoing the day's carefully chosen palette. Pearl bracelets encircle her wrists, and gold earrings catch the afternoon glow small touches that complete the ceremonial dress. This is the reality of diaspora life: home is never left behind. It travels across oceans, adapts to new climates, and flourishes on foreign streets. It shows up after church services in North London neighborhoods, vibrant and unapologetic, a bridge between worlds that her children will cross and recross throughout their lives.",
     },
-    date: "2023",
-    tags: ["abstract", "nature", "fine art", "patterns"],
+    date: "2025",
+    tags: ["African Art", "Peckham London", "Documentry"],
   },
      {
     id: "Eid-in-London",
