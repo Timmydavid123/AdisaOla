@@ -89,7 +89,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "joy",
     title: "JOY",
     category: "FINE ART",
-    description: "Exploring the abstract patterns and textures found in the natural world.",
+    description: "This series is a meditation on the universal language of joy, a force that transcends age, circumstance, and context. From children caught in the pure ecstasy of water play, their skin glistening with droplets and adorned with streaks of white like war paint of happiness, to the weathered face of a baba onilu whose smile carries the wisdom of countless rhythms and seasons, each portrait reveals joy as an act of radical self-authorship.",
     image: "/j7.jpg",
     images: {
       hero: "/j7.jpg",
@@ -112,9 +112,9 @@ export const portfolioItems: PortfolioItem[] = [
       intro:
         "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
       details:
-        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+        "The images span generations and moments: a young face split wide with laughter, water cascading like liquid light; hands that have drummed for decades, belonging to an elder whose eyes crinkle with a joy that has survived time itself; strangers and friends alike, each choosing in their own way to let happiness surface and shine through. What unites them is not their circumstances, which vary as widely as their ages, but their shared decision to create and claim joy as their own.There's something defiant in these smiles. They exist not because life has been easy, but because these individuals have chosen to forge joy from whatever materials they've been given. The baba onilu's expression speaks of a lifetime spent creating rhythm and beauty; the children's uninhibited glee reminds us of joy's primal nature; the individual portraits scattered throughout capture those fleeting, precious moments when someone decides to simply be happy, to simply be present.",
       conclusion:
-        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+        "Joy, these images insist, is democratic. It belongs to the young and the old, the player and the performer, the celebrated and the overlooked. It doesn't seem to actually tell you anything about your bank account or your status. It requires only your willingness to create a smile, a rhythm, and the decision to be fully alive in a single moment. The series becomes a visual anthology of chosen happiness, a testament to human resilience and the extraordinary power we possess to author our own emotional landscapes. Whether facing a camera directly with unguarded warmth or lost in the abandon of play, each subject demonstrates the same fundamental truth: joy is not a gift bestowed by favourable circumstances, but a creation born from our own minds and effort. Joy is not event-infused; it is not situation-compelled. Joy is a creation of our own minds and effort. You are the author of your joy.",
     },
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
