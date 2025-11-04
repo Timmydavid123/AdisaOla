@@ -119,135 +119,179 @@ export const portfolioItems: PortfolioItem[] = [
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
   },
-  // {
-  //   id: "wedding-moments",
-  //   title: "Wedding Moments",
-  //   category: "WEDDING",
-  //   description: "Capturing the joy, emotion, and intimate moments of life's most precious celebrations.",
-  //   image: "/image2.jpg",
-  //   images: {
-  //     hero: "/image2.jpg",
-  //     gallery: [
-  //       "/image2.jpg",
-  //       "/image4.jpg",
-  //       "/image3.jpg",
-  //       "/image2.jpg",
-  //     ],
-  //     featured: "/image4.jpg?height=500&width=800",
-  //   },
-  //   content: {
-  //     intro: "Wedding photography that focuses on genuine emotion and the unique story of each couple's special day.",
-  //     details:
-  //       "My approach to wedding photography is documentary-style, capturing authentic moments as they unfold naturally. I believe the best wedding photos are those that transport you back to the feeling of the moment.",
-  //     conclusion:
-  //       "Each wedding is a unique celebration of love, and my goal is to preserve those irreplaceable memories for generations to come.",
-  //   },
-  //   date: "2024",
-  //   tags: ["wedding", "celebration", "emotion", "documentary"],
-  // },
-  // {
-  //   id: "street-photography",
-  //   title: "Street Stories",
-  //   category: "DOCUMENTARY",
-  //   description: "Documenting the spontaneous moments and human stories that unfold in urban spaces.",
-  //   image: "/image4.jpg",
-  //   images: {
-  //     hero: "/image2.jpg",
-  //     gallery: [
-  //       "/image2.jpg",
-  //       "/image4.jpg",
-  //       "/image3.jpg",
-  //       "/image2.jpg",
-  //     ],
-  //     featured: "/image4.jpg?height=500&width=800",
-  //   },
-  //   content: {
-  //     intro: "Street photography that captures the unscripted drama and beauty of everyday urban life.",
-  //     details:
-  //       "This ongoing project documents the diverse stories and characters that make up the fabric of city life. Each photograph is a glimpse into a moment that will never happen again in quite the same way.",
-  //     conclusion:
-  //       "Through street photography, we can celebrate the extraordinary moments that exist within ordinary days.",
-  //   },
-  //   date: "2023-2024",
-  //   tags: ["street", "documentary", "urban", "candid"],
-  // },
-  // {
-  //   id: "fashion-editorial",
-  //   title: "Fashion Editorial",
-  //   category: "FASHION",
-  //   description: "High-fashion editorial work that blends creativity with commercial appeal.",
-  //   image: "/image2.jpg",
-  //   images: {
-  //     hero: "/image2.jpg",
-  //     gallery: [
-  //       "/image2.jpg",
-  //       "/image4.jpg",
-  //       "/image3.jpg",
-  //       "/image2.jpg",
-  //     ],
-  //     featured: "/image4.jpg?height=500&width=800",
-  //   },
-  //   content: {
-  //     intro: "Editorial fashion photography that pushes creative boundaries while maintaining commercial viability.",
-  //     details:
-  //       "Working with top stylists, makeup artists, and models, this series explores the intersection of fashion, art, and storytelling. Each shoot is carefully conceptualized to create images that are both visually striking and emotionally resonant.",
-  //     conclusion:
-  //       "Fashion photography at its best tells a story and evokes emotion while showcasing the artistry of design and style.",
-  //   },
-  //   date: "2024",
-  //   client: "Vogue Italia",
-  //   tags: ["fashion", "editorial", "commercial", "creative"],
-  // },
-  // {
-  //   id: "landscape-serenity",
-  //   title: "Landscape Serenity",
-  //   category: "LANDSCAPE",
-  //   description: "Peaceful landscapes that showcase the tranquil beauty of natural environments.",
-  //   image: "/image3.jpg",
-  //   images: {
-  //     hero: "/image2.jpg",
-  //     gallery: [
-  //       "/image2.jpg",
-  //       "/image4.jpg",
-  //       "/image3.jpg",
-  //       "/image2.jpg",
-  //     ],
-  //     featured: "/image4.jpg?height=500&width=800",
-  //   },
-  //   content: {
-  //     intro: "A meditation on the peaceful and restorative power of natural landscapes.",
-  //     details:
-  //       "This collection was created during extended periods in nature, often requiring early morning hikes and patient waiting for the perfect light. Each image aims to convey the sense of peace and wonder that comes from being immersed in natural beauty.",
-  //     conclusion:
-  //       "In our increasingly digital world, these landscapes serve as reminders of the healing power of nature and our connection to the earth.",
-  //   },
-  //   date: "2023",
-  //   tags: ["landscape", "nature", "serenity", "peaceful"],
-  // },
-  // {
-  //   id: "corporate-portraits",
-  //   title: "Corporate Portraits",
-  //   category: "CORPORATE",
-  //   description: "Professional portraits that capture personality while maintaining corporate sophistication.",
-  //   image: "/image4.jpg",
-  //   images: {
-  //     hero: "/image2.jpg",
-  //     gallery: [
-  //       "/image2.jpg",
-  //       "/image4.jpg",
-  //       "/image3.jpg",
-  //       "/image2.jpg",
-  //     ],
-  //     featured: "/image4.jpg?height=500&width=800",
-  //   },
-  //   content: {
-  //     intro: "Corporate photography that balances professionalism with authentic personality.",
-  //     details:
-  //       "Working with executives and teams across various industries, I create portraits that serve business needs while revealing the human side of corporate culture. The goal is to create images that are both approachable and authoritative.",
-  //     conclusion:
-  //       "Great corporate photography helps build trust and connection by showing the people behind the business.",
-  //   },
-  //   date: "2024",
-  //   tags: ["corporate", "professional", "business", "headshots"],
-  // },
+    {
+    id: "Alake",
+    title: "ÀLÀKÉ",
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/al7.jpg",
+    images: {
+      hero: "/al7.jpg",
+      gallery: [
+        "/al2.jpg",
+        "/al4.jpg",
+        "/al3.jpg",
+        "/al1.jpg",
+        "/al8.jpg",
+        "/al4.jpg",
+        "/al7.jpg",
+        "/al8.jpg",
+        "/al3.jpg",
+        "/al4.jpg",
+        "/al7.jpg",
+      ],
+      featured: "/al4.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2023",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+
+     {
+    id: "An Igbo mother in London",
+    title: "An Igbo mother in London",
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/q2.jpg",
+    images: {
+      hero: "/q2.jpg",
+      gallery: [
+        "/q3.jpg",
+        "/q4.jpg",
+        "/q4.jpg",
+        "/q5.jpg",
+        "/q7.jpg",
+        "/q8.jpg",
+        "/q9.jpg",
+        "/q10.jpg",
+        "/q11.jpg",
+        "/q1.jpg",
+        "/q9.jpg",
+      ],
+      featured: "/q4.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2023",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+     {
+    id: "Eid-in-London",
+    title: "Eid in London",
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/e16.jpg",
+    images: {
+      hero: "/e11.jpg",
+      gallery: [
+        "/e3..jpg",
+        "/e4.jpg",
+        "/e1.jpg",
+        "/e6.jpg",
+        "/e7.jpg",
+        "/e8.jpg",
+        "/e9.jpg",
+        "/e13.jpg",
+        "/e15.jpg",
+        "/e12.jpg",
+        "/e17.jpg",
+        "/e15.jpg",
+        "/e16.jpg",
+        "/e17.jpg",
+      ],
+      featured: "/e14.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2023",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+
+       {
+    id: "Peckham-pimps",
+    title: "Peckham pimps",
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/p2.jpg",
+    images: {
+      hero: "/p4.jpg",
+      gallery: [
+        "/p3.jpg",
+        "/p1.jpg",
+        "/p5.jpg",
+        "/p6.jpg",
+        "/p7.jpg",
+        "/p8.jpg",
+        "/p9.jpg",
+        "/p13.jpg",
+        "/p11.jpg",
+        "/p12.jpg",
+        "/p10.jpg",
+      ],
+      featured: "/p14.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2023",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+      {
+    id: "Best-dressed-man-in-London",
+    title: "Best dressed man in London",  
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/b2.jpg",
+    images: {
+      hero: "/b2.jpg",
+      gallery: [
+        "/b3.jpg",
+        "/b4.jpg",
+        "/b5.jpg",
+        "/b6.jpg",
+        "/b7.jpg",
+        "/b8.jpg",
+        "/b9.jpg",
+        "/b10.jpg",
+        "/b11.jpg",
+        "/b12.jpg",
+        "/b13.jpg",
+      ],
+      featured: "/b1.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2023",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
 ]
