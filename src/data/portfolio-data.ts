@@ -294,4 +294,107 @@ export const portfolioItems: PortfolioItem[] = [
     date: "2023",
     tags: ["abstract", "nature", "fine art", "patterns"],
   },
+      {
+    id: "Chairs-of-Kings",
+    title: "Chairs of Kings",  
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/c2.jpg",
+    images: {
+      hero: "/c2.jpg",
+      gallery: [
+        "/c3.jpg",
+        "/c4.jpg",
+        "/c5.jpg",
+        "/c6.jpg",
+        "/c7.jpg",
+        "/c8.jpg",
+        "/c9.jpg",
+        "/c10.jpg",
+        "/c11.jpg",
+        "/c2.jpg",
+        "/c4.jpg",
+      ],
+      featured: "/c1.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2025",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+      {
+    id: "Africa-Mothers-in-Peckham",
+    title: "Africa Mothers in Peckham on Mother's Day",  
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/a5.jpg",
+    images: {
+      hero: "/a5.jpg",
+      gallery: [
+        "/a3.jpg",
+        "/a4.jpg",
+        "/a2.jpg",
+        "/a6.jpg",
+        "/a7.jpg",
+        "/a8.jpg",
+        "/a9.jpg",
+        "/a10.jpg",
+        "/a1.jpg",
+        "/a5.jpg",
+        "/a11.jpg",
+      ],
+      featured: "/a1.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2025",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
+
+        {
+    id: "STEAMPUNK",
+    title: "STEAMPUNK",  
+    category: "FINE ART",
+    description: "Exploring the abstract patterns and textures found in the natural world.",
+    image: "/s1.jpg",
+    images: {
+      hero: "/s1.jpg",
+      gallery: [
+        "/s3.jpg",
+        "/s4.jpg",
+        "/s5.jpg",
+        "/s6.jpg",
+        "/s7.jpg",
+        "/s8.jpg",
+        "/s9.jpg",
+        "/s10.jpg",
+        "/s12.jpg",
+        "/s3.jpg",
+        "/s11.jpg",
+      ],
+      featured: "/s2.jpg",
+    },
+    content: {
+      intro:
+        "This series transforms familiar natural elements into abstract compositions that challenge perception and invite contemplation.",
+      details:
+        "Using techniques like macro photography and long exposure, I reveal the hidden patterns and rhythms that exist in nature. Each image is a meditation on form, texture, and the passage of time.",
+      conclusion:
+        "Through abstraction, we can discover new ways of seeing and appreciating the natural world that surrounds us.",
+    },
+    date: "2025",
+    tags: ["abstract", "nature", "fine art", "patterns"],
+  },
 ]

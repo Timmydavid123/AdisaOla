@@ -55,7 +55,7 @@ export default function PortfolioDetailPage() {
           <div className="absolute inset-0 bg-black/20" />
           <div className="absolute bottom-12 left-12 text-white">
             <span className="text-xs tracking-widest text-gray-300 mb-2 block">{portfolio.category}</span>
-            <h1 className="text-6xl font-light tracking-wider mb-4">{portfolio.title}</h1>
+            <h1 className="text-5xl font-light tracking-wider mb-4">{portfolio.title}</h1>
           </div>
         </section>
 
@@ -64,8 +64,8 @@ export default function PortfolioDetailPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div className="md:col-span-2">
-                <p className="text-[10px] text-gray-800 leading-relaxed font-light mb-8 text-justify">{portfolio.description}</p>
-                <p className="text-[10px] text-gray-600 leading-relaxed font-light text-justify">{portfolio.content.details}</p>
+                <p className="text-[14px] text-gray-800 leading-relaxed  mb-8 text-justify">{portfolio.description}</p>
+                <p className="text-[14px] text-gray-600 leading-relaxed  text-justify">{portfolio.content.details}</p>
               </div>
               <div className="space-y-6">
                 <div>
@@ -130,7 +130,7 @@ export default function PortfolioDetailPage() {
         {/* Text Section 2 */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[10px] text-gray-700 leading-relaxed font-light text-justify">{portfolio.content.conclusion}</p>
+            <p className="text-[14px] text-gray-700 leading-relaxed text-justify">{portfolio.content.conclusion}</p>
           </div>
         </section>
         
