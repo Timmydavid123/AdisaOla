@@ -98,4 +98,5 @@ export const publicationItems: PublicationItem[] = [
     tags: ["Photography", "Portrait", "Storytelling", "Culture"],
     link: "https://culturecustodian.com/adisa-olashile-on-harnessing-the-magic-of-serendipity-through-photography/",
   },
+   
 ]

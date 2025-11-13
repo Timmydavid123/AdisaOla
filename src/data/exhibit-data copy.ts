@@ -107,28 +107,28 @@ export const exhibitionItems: ExhibitionItem[] = [
     link:  "https://www.bellanaija.com/2022/04/adisa-olashile-baba-onilu-nft/"
   },
   {
-    id: "wedding-moments",
-    title: "Wedding Moments",
-    category: "WEDDING",
-    description: "Capturing the joy, emotion, and intimate moments of life's most precious celebrations.",
-    image: "/image2.jpg",
+    id: "baba-onlilu",
+    title: "Baba Onilu",
+    category: "",
+    description:
+      "A cover story for Culture Custodian Magazine spotlighting the power of storytelling through portraiture.",
+    image: "/l.png",
     images: {
-      hero: "/image2.jpg",
-      gallery: [
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image3.jpg",
-        "/image2.jpg",
-      ],
-      featured: "/image4.jpg?height=500&width=800",
+      hero: "/pub3-hero.jpg",
+      gallery: ["/pub3a.jpg", "/pub3b.jpg", "/pub3c.jpg"],
+      featured: "/pub3f.jpg",
     },
     content: {
-      intro: "Wedding photography that focuses on genuine emotion and the unique story of each couple's special day.",
-      details: "My approach to wedding photography is documentary-style, capturing authentic moments as they unfold naturally. I believe the best wedding photos are those that transport you back to the feeling of the moment.",
-      conclusion: "Each wedding is a unique celebration of love, and my goal is to preserve those irreplaceable memories for generations to come.",
+      intro:
+        "In this exclusive feature, Adisa discusses the philosophy behind capturing truth through the lens.",
+      details:
+        "It examines his approach to blending street photography and personal narrative to create emotionally resonant imagery.",
+      conclusion:
+        "Portraits of Change is not just about faces — it’s about the stories that live within them.",
     },
-    date: "2024",
-    tags: ["wedding", "celebration", "emotion", "documentary"],
-    link:  "/portfolio/1"
+    date: "2025",
+    client: "Culture Custodian",
+    tags: ["Photography", "Portrait", "Storytelling", "Culture"],
+    link: "https://www.ghanamma.com/ng/2022/04/10/how-nigerian-photographer-took-photos-of-an-aged-drummer-sold-it-as-an-nft-for-millions-of-naira/",
   },
 ]

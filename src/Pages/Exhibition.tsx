@@ -15,7 +15,7 @@ export default function Exhibition() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl mb-6 font-light tracking-wider">
-                PUBLICATIONS
+                Exhibitions
               </h1>
               <div className="w-24 h-1 bg-gray-800 mx-auto mb-8"></div>
             </div>
@@ -81,7 +81,7 @@ export default function Exhibition() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl mb-6 font-light tracking-wider">
-                EXHIBITIONS
+                Publications
               </h1>
               <div className="w-24 h-1 bg-gray-800 mx-auto mb-8"></div>
             </div>
