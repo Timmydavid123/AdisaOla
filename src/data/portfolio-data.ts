@@ -410,7 +410,7 @@ export const portfolioItems: PortfolioItem[] = [
         "/on4.jpeg",
         "/on5.jpeg",
         "/on6.jpeg",
-        "/on7.jpeg",
+        "/on14.jpeg",
         "/on8.jpeg",
         "/on9.jpeg",
         "/on10.jpeg",
