@@ -395,5 +395,40 @@ export const portfolioItems: PortfolioItem[] = [
     },
     date: "2025",
     tags: ["abstract", "nature", "fine art", "patterns"],
+  },  
+   
+  {
+    id: "ONÍGÈLÈ-YÍ",
+    title: "ONÍGÈLÈ YÍ ",  
+    category: "FINE ART",
+    description: "Onigele Yii. Taken in a small record shop in Peckham , these photographs follow a simple, quiet moment. Records stacked on shelves , music that lived many lives.",
+    image: "/on1.jpeg",
+    images: {
+      hero: "/on14.jpeg",
+      gallery: [
+        "/on3.jpeg",
+        "/on4.jpeg",
+        "/on5.jpeg",
+        "/on6.jpeg",
+        "/on7.jpeg",
+        "/on8.jpeg",
+        "/on9.jpeg",
+        "/on10.jpeg",
+        "/on12.jpeg",
+        "/on13.jpeg",
+        "/on14.jpeg",
+      ],
+      featured: "/on2.jpeg",
+    },
+    content: {
+      intro:
+        "In Yoruba , someone might say “Onigele yii” when noticing a person wearing a gele in a way that catches the eye, it’s not about showing off , it’s recognition, attention and respect. That’s what these pictures are all about .",
+      details:
+        "",
+      conclusion:
+        "Onigele speaks:I am the daughter who remembers, I am the generation that translates, I wrap my head in my mother’s tongue, I sit among the songs that raised me, I am both the keeper and the kept, I am Onigele yii ❤️",
+    },
+    date: "2025",
+    tags: ["abstract", "nature", "fine art", "patterns"],
   },
 ]
