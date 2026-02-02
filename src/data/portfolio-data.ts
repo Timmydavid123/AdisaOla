@@ -407,7 +407,7 @@ export const portfolioItems: PortfolioItem[] = [
       hero: "/on14.jpeg",
       gallery: [
         "/on3.jpeg",
-        "/on4.jpeg",
+        "/on7.jpeg",
         "/on5.jpeg",
         "/on6.jpeg",
         "/on14.jpeg",

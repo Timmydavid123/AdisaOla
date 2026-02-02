@@ -1,6 +1,6 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react';
-import emailjs from 'emailjs-com';
-import './ContactForm.css';
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+import "./ContactForm.css";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
@@ -20,51 +20,45 @@ interface FormErrors {
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // VITE (change to process.env.REACT_APP_* if CRA)
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    
-    // Clear error when user starts typing
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: undefined
-      }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
+    if (!formData.name.trim()) newErrors.name = "Name is required";
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
 
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -72,36 +66,34 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
+    if (!validateForm()) return;
+
+    // Extra safety: ensure env vars exist
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      alert("Email service is not configured. Please try again later.");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: 'David Adeleke' // Replace with your name
+        reply_to: formData.email, // recommended
+        to_name: "David Adeleke",
       };
 
-      await emailjs.send(
-        'service_6oq0men', // Replace with your EmailJS service ID
-        'template_idjxvox', // Replace with your EmailJS template ID
-        templateParams,
-        'XKMECWaGxJ2p3DpdW' // Replace with your EmailJS user ID
-      );
-      
-      // Show success message
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
       setIsSubmitted(true);
-      
-    } catch (error) {
-      console.error('Failed to send message:', error);
-      alert('Failed to send message. Please try again later.');
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setErrors({});
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      alert("Failed to send message. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -116,11 +108,8 @@ const ContactForm = () => {
             <div className="success-icon">✓</div>
             <h2>Message Sent Successfully!</h2>
             <p>Thank you for contacting us. We'll get back to you soon.</p>
-            <button 
-              onClick={() => {
-                setIsSubmitted(false);
-                setFormData({ name: '', email: '', subject: '', message: '' });
-              }}
+            <button
+              onClick={() => setIsSubmitted(false)}
               className="back-button"
             >
               Send Another Message
@@ -132,106 +121,130 @@ const ContactForm = () => {
     );
   }
 
- return (
-  <>
-    <Header />
-   <div className="w-full px-6 pt-24 pb-12 bg-gray-50"> 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        
-        {/* Left side: Contact details */}
-        <div className="space-y-6 md:col-span-1">
-          <h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
-          <p className="text-gray-600">We’d love to hear from you. Reach us directly or use the form.</p>
-          
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-              <p className="text-gray-600">+234 801 234 5678</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-              <p className="text-gray-600">support@example.com</p>
+  return (
+    <>
+      <Header />
+      <div className="w-full px-6 pt-24 pb-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="space-y-6 md:col-span-1">
+            <h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
+            <p className="text-gray-600">
+              We’d love to hear from you. Reach us directly or use the form.
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
+                <p className="text-gray-600">+234 801 234 5678</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">Email</h3>
+                <p className="text-gray-600">support@example.com</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right side: Form (takes more space) */}
-        <div className="bg-white shadow-md rounded-xl p-6 md:col-span-2">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Full Name *</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter your full name"
-                className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
-                  errors.name ? 'border-red-500 ring-red-200' : 'border-gray-300 focus:ring-blue-400'
-                }`}
-              />
-              {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
-            </div>
+          <div className="bg-white shadow-md rounded-xl p-6 md:col-span-2">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
+                    errors.name
+                      ? "border-red-500 ring-red-200"
+                      : "border-gray-300 focus:ring-blue-400"
+                  }`}
+                />
+                {errors.name && (
+                  <p className="text-sm text-red-500">{errors.name}</p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Email *</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
-                  errors.email ? 'border-red-500 ring-red-200' : 'border-gray-300 focus:ring-blue-400'
-                }`}
-              />
-              {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
+                    errors.email
+                      ? "border-red-500 ring-red-200"
+                      : "border-gray-300 focus:ring-blue-400"
+                  }`}
+                />
+                {errors.email && (
+                  <p className="text-sm text-red-500">{errors.email}</p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Subject *</label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="What is this regarding?"
-                className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
-                  errors.subject ? 'border-red-500 ring-red-200' : 'border-gray-300 focus:ring-blue-400'
-                }`}
-              />
-              {errors.subject && <p className="text-sm text-red-500">{errors.subject}</p>}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Subject *
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="What is this regarding?"
+                  className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
+                    errors.subject
+                      ? "border-red-500 ring-red-200"
+                      : "border-gray-300 focus:ring-blue-400"
+                  }`}
+                />
+                {errors.subject && (
+                  <p className="text-sm text-red-500">{errors.subject}</p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Message *</label>
-              <textarea
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Type your message..."
-                className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
-                  errors.message ? 'border-red-500 ring-red-200' : 'border-gray-300 focus:ring-blue-400'
-                }`}
-              />
-              {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Message *
+                </label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Type your message..."
+                  className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 ${
+                    errors.message
+                      ? "border-red-500 ring-red-200"
+                      : "border-gray-300 focus:ring-blue-400"
+                  }`}
+                />
+                {errors.message && (
+                  <p className="text-sm text-red-500">{errors.message}</p>
+                )}
+              </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition"
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition disabled:opacity-60"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
-  </>
-);
+      <Footer />
+    </>
+  );
 };
 
 export default ContactForm;
+  
