@@ -17,6 +17,7 @@ export default function Exhibition() {
       <h1 className="text-4xl mb-6 font-light tracking-wider">
         Exhibitions
       </h1>
+      <h2>Coming Soon</h2>
       <div className="w-24 h-1 bg-gray-800 mx-auto mb-8"></div>
     </div>
 

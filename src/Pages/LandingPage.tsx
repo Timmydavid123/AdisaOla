@@ -345,7 +345,7 @@ useEffect(() => {
     <div className="text-center mb-16">
       <h2 className="text-5xl text-black mb-6 font-light tracking-wider">PORTFOLIO</h2>
       <div className="w-24 h-1 bg-gray-800 mx-auto mb-8"></div>
-      <p className="text-[10px] text-gray-700 max-w-2xl mx-auto leading-relaxed font-light">
+      <p className="text-[16px] text-gray-700 max-w-2xl mx-auto leading-relaxed font-light">
         A curated collection of moments captured through my lens, showcasing the artistry and technical excellence 
         that defines my photography approach.
       </p>

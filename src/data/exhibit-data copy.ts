@@ -131,4 +131,29 @@ export const exhibitionItems: ExhibitionItem[] = [
     tags: ["Photography", "Portrait", "Storytelling", "Culture"],
     link: "https://www.ghanamma.com/ng/2022/04/10/how-nigerian-photographer-took-photos-of-an-aged-drummer-sold-it-as-an-nft-for-millions-of-naira/",
   },
+    {
+    id: "The Guardian",
+    title: "The Guardian",
+    category: "",
+    description:
+      "A cover story for Culture Custodian Magazine spotlighting the power of storytelling through portraiture.",
+    image: "/pub4.jpeg",
+    images: {
+      hero: "/pub3-hero.jpg",
+      gallery: ["/pub3a.jpg", "/pub3b.jpg", "/pub3c.jpg"],
+      featured: "/pub3f.jpg",
+    },
+    content: {
+      intro:
+        "In this exclusive feature, Adisa discusses the philosophy behind capturing truth through the lens.",
+      details:
+        "It examines his approach to blending street photography and personal narrative to create emotionally resonant imagery.",
+      conclusion:
+        "Portraits of Change is not just about faces — it’s about the stories that live within them.",
+    },
+    date: "2025",
+    client: "Culture Custodian",
+    tags: ["Photography", "Portrait", "Storytelling", "Culture"],
+    link: "https://www.ghanamma.com/ng/2022/04/10/how-nigerian-photographer-took-photos-of-an-aged-drummer-sold-it-as-an-nft-for-millions-of-naira/",
+  },
 ]

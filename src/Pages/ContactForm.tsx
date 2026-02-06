@@ -1,5 +1,4 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import emailjs from "@emailjs/browser";
 import "./ContactForm.css";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
@@ -29,11 +28,10 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [apiError, setApiError] = useState<string>("");
 
-  // VITE (change to process.env.REACT_APP_* if CRA)
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+  // Backend API URL - use environment variable or default
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4242";
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,6 +41,11 @@ const ContactForm = () => {
 
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+    
+    // Clear API error when user starts typing
+    if (apiError) {
+      setApiError("");
     }
   };
 
@@ -66,34 +69,38 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setApiError("");
+    
     if (!validateForm()) return;
-
-    // Extra safety: ensure env vars exist
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      alert("Email service is not configured. Please try again later.");
-      return;
-    }
 
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        reply_to: formData.email, // recommended
-        to_name: "David Adeleke",
-      };
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      const data = await response.json();
 
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      if (!data.success) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      // Success
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       setErrors({});
     } catch (err) {
-      console.error("EmailJS error:", err);
-      alert("Failed to send message. Please try again later.");
+      console.error("Contact form error:", err);
+      setApiError(err instanceof Error ? err.message : "Failed to send message. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -107,7 +114,7 @@ const ContactForm = () => {
           <div className="success-content">
             <div className="success-icon">✓</div>
             <h2>Message Sent Successfully!</h2>
-            <p>Thank you for contacting us. We'll get back to you soon.</p>
+            <p>Thank you for contacting us. We've sent a confirmation to your email and will get back to you soon.</p>
             <button
               onClick={() => setIsSubmitted(false)}
               className="back-button"
@@ -129,22 +136,31 @@ const ContactForm = () => {
           <div className="space-y-6 md:col-span-1">
             <h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
             <p className="text-gray-600">
-              We’d love to hear from you. Reach us directly or use the form.
+              We'd love to hear from you. Reach us directly or use the form.
             </p>
 
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-                <p className="text-gray-600">+234 801 234 5678</p>
+                <p className="text-gray-600">+44 7887 851220</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-                <p className="text-gray-600">support@example.com</p>
+                <p className="text-gray-600">info@adisaolashile.com</p>
               </div>
             </div>
           </div>
 
           <div className="bg-white shadow-md rounded-xl p-6 md:col-span-2">
+            {apiError && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md">
+                <p className="text-red-700 font-medium">Error: {apiError}</p>
+                <p className="text-red-600 text-sm mt-1">
+                  Please check your information and try again, or contact us directly.
+                </p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -233,10 +249,14 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition disabled:opacity-60"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
+              
+              <p className="text-sm text-gray-500 text-center">
+                You'll receive a confirmation email after submitting.
+              </p>
             </form>
           </div>
         </div>
@@ -247,4 +267,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-  

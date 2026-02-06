@@ -38,15 +38,14 @@ const ProductDetail: React.FC = () => {
 
   // Frame options
   const frameOptions = [
-    { name: "A0", price: 100, dimensions: "83.82 x 104.14cm (33 x 41 inches)" },
-    { name: "A1", price: 75, dimensions: "58.42 x 71.12cm (23 x 28 inches)" },
-    { name: "A2", price: 50, dimensions: "40.64 x 50.8cm (16 x 20 inches)" },
-    { name: "A3", price: 25, dimensions: "30.48 x 38.1cm (12 x 15 inches)" },
+    { name: "A0", price: 450, dimensions: "83.82 x 104.14cm (33 x 41 inches)" },
+    { name: "A1", price: 400, dimensions: "58.42 x 71.12cm (23 x 28 inches)" },
+    { name: "A2", price: 350, dimensions: "40.64 x 50.8cm (16 x 20 inches)" },
   ];
 
   const selectedFrameOption = frameOptions.find((f) => f.name === selectedFrame);
   const framePrice = selectedFrameOption ? selectedFrameOption.price : 0;
-  const totalPrice = (product.price + framePrice) * quantity;
+  const totalPrice = (framePrice) * quantity;
   const availableStock = getProductStock(product.id);
 
   // Helpers
@@ -79,7 +78,7 @@ const ProductDetail: React.FC = () => {
     addToCart({
       id: uniqueId,
       title: `${product.title} (${selectedFrame} Size)`,
-      price: product.price + framePrice,
+      price: framePrice,
       artist: product.artist,
       image: product.image,
       quantity,
@@ -269,12 +268,12 @@ const ProductDetail: React.FC = () => {
           <p className="text-lg">{product.description}</p>
 
                   <div className="text-2xl font-semibold text-indigo-600">
-          {formatPrice(totalPrice)}
+          {formatPrice(framePrice)}
         </div>
 
           {framePrice > 0 && (
             <p className="text-sm text-gray-500">
-              (Art: {formatPrice(product.price)} + Frame: {formatPrice(framePrice)})
+              (Price: {formatPrice(framePrice)})
             </p>
           )}
 

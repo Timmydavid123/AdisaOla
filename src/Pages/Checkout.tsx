@@ -8,7 +8,7 @@ import '../App.css';
 
 const Checkout: React.FC = () => {
   const { cartItems, getCartTotal, clearCart } = useCart();
-  const { formatPrice, convertToUSD, getStripeCurrency, getCurrencyMultiplier } = useCurrency();
+  const { formatPrice, getStripeCurrency, getCurrencyMultiplier } = useCurrency(); // Removed convertToUSD
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [selectedPayment, setSelectedPayment] = useState<string>('stripe');
   const [customerData, setCustomerData] = useState<CustomerData>({
@@ -46,10 +46,10 @@ const Checkout: React.FC = () => {
     setIsProcessing(true);
 
     try {
-      // Convert all prices to USD for Stripe consistency
+      // Send original prices - let Stripe handle currency conversion
       const itemsForStripe = cartItems.map(item => ({
         title: item.title,
-        price: convertToUSD(item.price), // Convert to USD
+        price: item.price, // Use original price, not converted
         quantity: item.quantity,
         image: item.image,
         artist: item.artist
@@ -90,6 +90,7 @@ const Checkout: React.FC = () => {
     }
   };
 
+  // ... rest of the PayPal and other functions remain the same
   const redirectToPayPal = async (): Promise<void> => {
     // PayPal implementation remains the same
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -136,6 +137,7 @@ const Checkout: React.FC = () => {
     );
   }
 
+  // ... rest of the JSX remains the same
   return (
     <div className="checkout-page">
       <Header />

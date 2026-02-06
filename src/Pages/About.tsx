@@ -35,7 +35,7 @@ export default function AboutMe() {
             <h2 className="text-5xl mb-6 text-black tracking-tight font-light">
               About Me
             </h2>
-            <p className="text-gray-900 leading-relaxed text-lg mb-6 text-justify font-light">
+            <p className="text-gray-900 leading-loose text-lg mb-6 text-justify font-light ">
               I am <span className="text-black font-semibold">Adisa Olashile, </span>a London-based creative photographer originally from Nigeria. My work spans portraiture, storytelling, documentary, lifestyle, and fashion, each series I have created telling stories rooted in identity, resilience, and everyday moments. I've captured everything from emotive celebrations like Women's Day series to culturally rich community chronicles, such as my “Africa Mothers in Peckham” , “ Disapora in Peckham "Lagos meets London" project and street series “Peckham Pimps” 
               One of my projects that gained significant attention was the series featuring<span className="text-black font-semibold"> “Baba Onilu,” </span>an elderly Nigerian drummer whose portrait I minted as an NFT and shared half the proceeds, bringing both dignity and connection through visual storytelling 
               Driven by a passion for people and cultural heritage, I use my lens to highlight expressions, community, and the power of small yet profound human moments.
